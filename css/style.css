@@ -467,8 +467,9 @@ header {
 .sci li a:hover {
     color: var(--main-color);
 }
-
+/* Estilos generales para pantallas menores a 768px */
 @media (max-width: 768px) {
+    /* Estilos comunes */
     header {
         padding: 20px 30px;
     }
@@ -505,9 +506,131 @@ header {
         padding: 15px;
         font-size: 1.2rem;
     }
+
+    /* Estilos de banner-title */
+    .banner-title {
+        position: relative;
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .banner-title h1 {
+        font-size: 30px; /* Ajustado según el tamaño de pantalla */
+    }
+
+    
+@keyframes animate {
+    0% {
+        transform: translate(-40%, -40%) rotateY(0deg);
+    }
+
+    100% {
+        transform: translate(-40%, -40%) rotateY(360deg);
+    }
 }
 
+    .banner-title .subtitle {
+        font-size: 14px;
+    }
+
+    /* Estilos de content */
+    .content {
+        display: none;
+        position: relative;
+        margin-top: 50px;
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .content .more {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    /* Ajustes de triángulos */
+    .triangle, .triangle-inverse {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .triangle {
+        left: 20%;
+    }
+
+    .triangle-inverse {
+        left: 49%;
+    }
+
+    /* Posición de los triángulos */
+    .triangle.two {
+        top: 0%;
+        left: 78%;
+    }
+
+    .triangle.three {
+        top: 46%;
+        left: 50%;
+    }
+
+    .triangle.four {
+        top: 0%;
+        left: 20%;
+    }
+
+    .triangle.five {
+        top: 70%;
+        left: 115%;
+    }
+
+    .triangle.six {
+        top: 70%;
+        left: 115%;
+    }
+
+    .triangle-seven {
+        top: 0%;
+        left: 15%;
+    }
+
+    /* Triángulos inversos */
+    .triangle-inverse.two {
+        top: 10%;
+        left: 122%;
+    }
+
+    .triangle-inverse.three {
+        top: 45%;
+        left: 79%;
+    }
+
+    .triangle-inverse.four {
+        top: 50%;
+        left: 180%;
+    }
+
+    .triangle-inverse.five {
+        top: 70%;
+        left: 185%;
+    }
+
+    .flip-card-back p {
+        font-size: 0.8rem; /* Reducir texto en triángulos */
+    }
+
+    /* Video y fondo */
+    .banner .bg-video, .triangle video, .triangle-inverse video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Estilos para pantallas menores a 480px */
 @media (max-width: 480px) {
+    /* Ajustes generales */
     header {
         padding: 15px 20px;
     }
@@ -520,128 +643,74 @@ header {
         font-size: 1.5rem;
     }
 
+    /* Ajustes en banner-title */
     .banner-title h1 {
-        font-size: 8rem;
+        font-size: 24px;
     }
 
     .banner-title .subtitle {
-        font-size: 1.2rem;
+        font-size: 12px;
     }
 
-    .banner .content {
-        width: 100%;
-        padding: 20px;
+    /* Ajustes en content */
+    .content {
+        padding: 5px;
+        margin-left: 15px;
     }
 
+    .content .more {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .content p {
+        font-size: 12px;
+    }
+
+    /* Ajuste de la posición de los iconos sociales */
     .sci {
-        right: 20px;
-        bottom: 20px;
+        right: 10px;
+        bottom: 10px;
     }
 
     .sci li a {
-        font-size: 1.2rem;
-    }
-}
-
-/* Estilos para pantallas pequeñas */
-@media screen and (max-width: 768px) {
-    /* Cambiamos el tamaño de los triángulos para que ocupen la mitad del ancho de la pantalla */
-    .triangle, .triangle-inverse {
-        width: 50vw;  /* Ocupan la mitad del ancho de la pantalla */
-        height: 50vw; /* Mantienen la misma proporción */
+        font-size: 1.3rem;
     }
 
-    /* Posicionamos los triángulos de manera diagonal desde el lado derecho */
-    .triangle {
-        left: 20%;  /* Los posicionamos más a la derecha de la pantalla */
-        
-    }
-
-    .triangle-inverse{
-        left: 49%;
-    }
-
-    /* Ajustamos las posiciones para que encajen bien en pantallas pequeñas */
-    .triangle.two {
-        top: 0%;
-        left: 78%; /* Mover más a la derecha */
-    }
-
-    .triangle.three {
-        top: 46%;
-        left: 50%; /* Mover más a la derecha */
-    }
-
-    .triangle.four {
-        top: 0%;
-        left: 20%; /* Mover más a la derecha */
-    }
-
-    .triangle.five {
-        top: 70%;
-        left: 115%; /* Mover más a la derecha */
-    }
-    .triangle.six {
-        top: 70%;
-        left: 115%; /* Mover más a la derecha */
-    }
-
-    .triangle-seven {
-        top: 0%;
-        left: 15%; /* Mover más a la derecha */
-    }
-
-    /* Cambiar posiciones de los triángulos inversos en pantallas pequeñas */
-    .triangle-inverse.two {
-        top: 10%;
-        left: 122%; /* Mover más a la derecha */
-    }
-
-    .triangle-inverse.three {
-        top: 45%;
-        left: 79%; /* Mover más a la derecha */
-    }
-
-    .triangle-inverse.four {
-        top: 50%;
-        left: 180%; /* Mover más a la derecha */
-    }
-
-    .triangle-inverse.five {
-        top: 70%;
-        left: 185%; /* Mover más a la derecha */
-    }
-
-    /* Reducir el tamaño de los textos en los triángulos */
-    .flip-card-back p {
-        font-size: 0.8rem; /* Reducir tamaño de texto para pantallas pequeñas */
-    }
-}
-
-@media (max-width: 768px) {
-    .banner .bg-video {
-        width: 100%;
-        height: auto;
-    }
-
-    .triangle video, .triangle-inverse video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .banner .bg-video {
+    /* Ajuste de video y fondo */
+    .banner .bg-video, .triangle video, .triangle-inverse video {
         width: 100%;
         height: 100%;
     }
 
-    .triangle video, .triangle-inverse video {
-        width: 100%;
-        height: 100%;
+    /* Ajustes para el contenido */
+    .content {
+        padding: 5px;
+        margin-left: 5px;
+        margin-top: 20px;
+    }
+
+    .content a {
+        font-size: 1rem;
+    }
+
+    .content i {
+        font-size: 0.8rem;
+        margin-left: -12px;
+    }
+
+    .banner .content .more {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .banner .content p {
+        font-size: 12px;
+        margin-bottom: 10px;
     }
 }
 
+/* Estilos específicos para el nav móvil */
 @media (max-width: 768px) {
     .nav-mobile {
         background-color: rgba(0, 0, 0, 0.9);
@@ -669,31 +738,5 @@ header {
 
     .nav-mobile li a {
         font-size: 1.5rem;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .content {
-        width: 90%;
-        padding: 10px;
-    }
-
-    .content a {
-        font-size: 1rem;
-    }
-
-    .banner .content p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-
-    .sci {
-        right: 10px;
-        bottom: 10px;
-    }
-
-    .sci li a {
-        font-size: 1.3rem;
     }
 }
