@@ -552,61 +552,64 @@ header {
     }
 
     /* Posicionamos los triángulos de manera diagonal desde el lado derecho */
-    .triangle, .triangle-inverse {
+    .triangle {
         left: 20%;  /* Los posicionamos más a la derecha de la pantalla */
         
     }
 
+    .triangle-inverse{
+        left: 49%;
+    }
+
     /* Ajustamos las posiciones para que encajen bien en pantallas pequeñas */
     .triangle.two {
-        top: 40%;
-        left: 55%; /* Mover más a la derecha */
+        top: 0%;
+        left: 78%; /* Mover más a la derecha */
     }
 
     .triangle.three {
-        top: 60%;
-        left: 10%; /* Mover más a la derecha */
+        top: 46%;
+        left: 50%; /* Mover más a la derecha */
     }
 
     .triangle.four {
-        top: 50%;
-        left: 80%; /* Mover más a la derecha */
+        top: 0%;
+        left: 20%; /* Mover más a la derecha */
     }
 
     .triangle.five {
         top: 70%;
-        left: 85%; /* Mover más a la derecha */
+        left: 115%; /* Mover más a la derecha */
     }
-
     .triangle.six {
-        top: 90%;
-        left: 90%; /* Mover más a la derecha */
+        top: 70%;
+        left: 115%; /* Mover más a la derecha */
     }
 
     .triangle-seven {
-        top: 110%;
-        left: 95%; /* Mover más a la derecha */
+        top: 0%;
+        left: 15%; /* Mover más a la derecha */
     }
 
     /* Cambiar posiciones de los triángulos inversos en pantallas pequeñas */
     .triangle-inverse.two {
         top: 10%;
-        left: 70%; /* Mover más a la derecha */
+        left: 122%; /* Mover más a la derecha */
     }
 
     .triangle-inverse.three {
-        top: 30%;
-        left: 75%; /* Mover más a la derecha */
+        top: 45%;
+        left: 79%; /* Mover más a la derecha */
     }
 
     .triangle-inverse.four {
         top: 50%;
-        left: 80%; /* Mover más a la derecha */
+        left: 180%; /* Mover más a la derecha */
     }
 
     .triangle-inverse.five {
         top: 70%;
-        left: 85%; /* Mover más a la derecha */
+        left: 185%; /* Mover más a la derecha */
     }
 
     /* Reducir el tamaño de los textos en los triángulos */
