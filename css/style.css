@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #f50e5b;
+    --black: #000000;
+    --light-color:#868e96;
+}
+
+body {
+    position: relative;
+    /* background: var(--black); */
+    background: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    color: #ffffff;
+    font-size: 2rem;
+    transition: 0.5s;
+}
+
+.menu.active {
+    transform: rotateY(180deg);
+}
+
+.nav {
+    display: flex;
+    margin-right: 50px;
+}
+
+.nav li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+.nav li a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+.nav li a:hover {
+    color: var(--main-color);
+}
+
+.nav-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 999;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(10px);
+}
+
+.nav-mobile.active {
+    opacity: 1;
+    visibility: visible;
+    filter: blur(0);
+}
+
+.nav-mobile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(20px);
+    z-index: -1;
+
+}
+
+.nav-mobile li {
+    position: relative;
+    list-style: none;
+}
+
+.nav-mobile li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+.nav-mobile li a:hover {
+    color: var(--main-color);
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+    perspective: 1000px;
+}
+
+.banner::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.9)
+    );
+}
+
+.banner .share {
+    position: absolute;
+    top: 45%;
+    left: 50px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 2rem;
+    z-index: 1000;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.banner .share:hover {
+    color: var(--main-color);
+}
+
+.banner .share::before {
+    position: absolute;
+    content: '';
+    top: 40px;
+    left: 50%;
+    width: 2px;
+    height: 100px;
+    background: #ffffff;
+}
+
+.triangle {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 30vh;
+    height: 30vh;
+    clip-path: polygon(0 0, 50% 87%, 100% 0);
+    cursor: pointer;
+    z-index: 900;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.triangle-inverse {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: calc(15vh + 5vh);
+    width: 30vh;
+    height: 30vh;
+    clip-path: polygon(0 100%, 50% 13%, 100% 100%);
+    cursor: pointer;
+    z-index: 900;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.triangle.two {
+    left: calc(30vh + 10vh);
+}
+.triangle.three {
+    left: calc(60vh + 20vh);
+}
+.triangle.four {
+    top: calc(30vh + 5vh);
+    left: calc(15vh + 5vh);
+
+}
+.triangle.five {
+    top: calc(30vh + 5vh);
+    left: calc(45vh + 15vh);
+}
+.triangle.six {
+    top: calc(60vh + 10vh);
+    left: calc(30vh + 10vh);
+}
+.triangle.seven {
+    top: calc(60vh + 10vh);
+    left: calc(60vh + 20vh);
+}
+
+.triangle-inverse.two {
+    left: calc(45vh + 15vh);
+}
+.triangle-inverse.three {
+    top: calc(30vh + 5vh);
+    left: calc(30vh + 10vh);
+}
+.triangle-inverse.four {
+    top: calc(60vh + 10vh);
+    left: calc(45vh + 15vh);
+}
+.triangle-inverse.five {
+    top: calc(60vh + 10vh);
+    left: calc(75vh + 25vh);
+}
+
+.triangle:hover,
+.triangle-inverse:hover {
+    transform: rotateY(360deg);
+}
+
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.triangle:hover .flip-card,
+.triangle-inverse:hover .flip-card{
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front {
+    color: #ffffff;
+}
+
+.flip-card-back {
+    background: var(--main-color);
+    color: #ffffff;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.flip-card-back p {
+    font-size: 1rem;
+    line-height: 1.1;
+}
+
+.flip-card-back .play{
+    font-size: 2rem;
+    color: #ffffff;
+    transition: 0.5s;
+    transform: scale(1);
+}
+
+.flip-card-back .play:hover {
+    transform: scale(1.5);
+}
+
+.triangle-inverse .flip-card-back {
+    padding-top: 80px;
+}
+
+.triangle-inverse img,
+.triangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.triangle-inverse video,
+.triangle video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-container.active {
+    border: 6px solid var(--main-color);
+}
+
+.banner .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+.banner .bg-video.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.banner-title {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.banner-title h1 {
+    color: #ffffff;
+    font-size: 16rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    width: 100%;
+    z-index: 900;
+    font-weight: 800;
+    line-height: 0.8;
+}
+
+.banner-title .text-special {
+    position: absolute;
+    font-size: 35rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateY(360deg);
+    }
+}
+
+.banner-title .subtitle {
+    position: relative;
+    color: #ffffff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    z-index: 900;
+}
+
+.banner .content {
+    position: absolute;
+    z-index: 1000;
+    bottom: 100px;
+    left: 100px;
+    color: #ffffff;
+    width: 400px;
+    height: auto;
+}
+
+.banner .content a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.banner .content a:hover {
+    color: var(--main-color);
+}
+
+.sci {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+    color: #ffffff;
+    display: flex;
+    list-style: none;
+    z-index: 1000;
+    gap: 40px;
+}
+
+.sci li a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
+
+.sci li a:hover {
+    color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .nav-mobile.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav li {
+        margin: 10px 0;
+    }
+
+    .nav li a {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu {
+        font-size: 1.5rem;
+    }
+
+    .banner-title h1 {
+        font-size: 8rem;
+    }
+
+    .banner-title .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .banner .content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sci {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .sci li a {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    /* Cambiamos el tamaño de los triángulos para que ocupen la mitad del ancho de la pantalla */
+    .triangle, .triangle-inverse {
+        width: 50vw;  /* Ocupan la mitad del ancho de la pantalla */
+        height: 50vw; /* Mantienen la misma proporción */
+    }
+
+    /* Posicionamos los triángulos de manera diagonal desde el lado derecho */
+    .triangle, .triangle-inverse {
+        left: 20%;  /* Los posicionamos más a la derecha de la pantalla */
+        
+    }
+
+    /* Ajustamos las posiciones para que encajen bien en pantallas pequeñas */
+    .triangle.two {
+        top: 40%;
+        left: 55%; /* Mover más a la derecha */
+    }
+
+    .triangle.three {
+        top: 60%;
+        left: 10%; /* Mover más a la derecha */
+    }
+
+    .triangle.four {
+        top: 50%;
+        left: 80%; /* Mover más a la derecha */
+    }
+
+    .triangle.five {
+        top: 70%;
+        left: 85%; /* Mover más a la derecha */
+    }
+
+    .triangle.six {
+        top: 90%;
+        left: 90%; /* Mover más a la derecha */
+    }
+
+    .triangle-seven {
+        top: 110%;
+        left: 95%; /* Mover más a la derecha */
+    }
+
+    /* Cambiar posiciones de los triángulos inversos en pantallas pequeñas */
+    .triangle-inverse.two {
+        top: 10%;
+        left: 70%; /* Mover más a la derecha */
+    }
+
+    .triangle-inverse.three {
+        top: 30%;
+        left: 75%; /* Mover más a la derecha */
+    }
+
+    .triangle-inverse.four {
+        top: 50%;
+        left: 80%; /* Mover más a la derecha */
+    }
+
+    .triangle-inverse.five {
+        top: 70%;
+        left: 85%; /* Mover más a la derecha */
+    }
+
+    /* Reducir el tamaño de los textos en los triángulos */
+    .flip-card-back p {
+        font-size: 0.8rem; /* Reducir tamaño de texto para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .banner .bg-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .triangle video, .triangle-inverse video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner .bg-video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .triangle video, .triangle-inverse video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-mobile {
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .nav-mobile.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-mobile li {
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-mobile li a {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .content {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .content a {
+        font-size: 1rem;
+    }
+
+    .banner .content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .sci {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .sci li a {
+        font-size: 1.3rem;
+    }
+}
