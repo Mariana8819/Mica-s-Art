@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>Mica Art - Arte y Creación</title>
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Mica Art</a>
+        <a href="#inicio" class="logo">Logo</a>
         <div class="header-right">
-            <ul class="nav">
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#talleres">Talleres</a></li>
+            <ul class="nav">                
                 <li><a href="#tienda">Tienda</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -31,7 +29,7 @@
         <li><a href="#contacto">Contacto</a></li>
     </ul>
 
-    <section id="inicio">
+    <section id="inicio" class="home">
     <div class="banner">
         <div class="banner-content">
         <a href="#" class="share"><i class='bx bxs-share-alt'></i></a>
@@ -241,11 +239,81 @@
 
     </div>
 </div>
-</section>
+    </section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <p>Descubre mis últimas obras de arte.</p>
+    <section id="portfolio" class="feature">
+        <h1 class="heading">Portfolio: Obras <span>Destacadas</span></h1>
+        <p>Explora una selección de mis últimas creaciones, cada una con su propia historia y estilo único. 
+            Si alguna de ellas te inspira, no dudes en contactarme para más detalles 
+            o para encargar una obra personalizada.</p>
+        <div class="swiper feature-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/pintura10.png" alt="Sonrisa Dental">
+                    </div>
+                    <div class="contentt">
+                        <div class="pricee">Vendido</div>
+                        <h3>"Sonrisa Odontologica"</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/pintura27.png" alt="Hopkings">
+                    </div>
+                    <div class="contentt">
+                        <div class="pricee">$109.000</div>
+                        <h3>"Hopkings"</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/pintura24.png" alt="Madre e hijo">
+                    </div>
+                    <div class="contentt">
+                        <div class="pricee">$109.000</div>
+                        <h3>"Madre e hijo"</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/pintura14.png" alt="Mirada Lejana">
+                    </div>
+                    <div class="contentt">
+                        <div class="pricee">$109.000</div>
+                        <h3>"Mirada Lejana"</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/pintura17.png" alt="Mirada Compasiva">
+                    </div>
+                    <div class="contentt">
+                        <div class="pricee">Vendido</div>
+                        <h3>"Mirada Compasiva"</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/pintura21.png" alt="Rubio">
+                    </div>
+                    <div class="contentt">
+                        <div class="pricee">$99.000</div>
+                        <h3>"Rubio"</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/pintura23.png" alt="Mirada a lo alto">
+                    </div>
+                    <div class="contentt">
+                        <div class="pricee">$119.000</div>
+                        <h3>"Mirada a lo alto"</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
     <section id="servicios">
@@ -273,7 +341,8 @@
         <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
         <li><a href="#"><i class="bx bxl-youtube"></i></a></li>
     </ul>
-
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>

@@ -7,9 +7,28 @@
 }
 
 :root {
-    --main-color: #f50e5b;
+    --main-color: #e40780;
     --black: #000000;
     --light-color:#868e96;
+}
+
+html, body {    
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: #fafafa;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
 }
 
 body {
@@ -20,17 +39,19 @@ body {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 100px;
+    padding: 15px 100px;
     z-index: 1000;
 }
 
@@ -45,6 +66,7 @@ header {
 
 .header-right {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -467,6 +489,104 @@ header {
 .sci li a:hover {
     color: var(--main-color);
 }
+
+section{
+    padding: 2rem 9%;
+
+}
+
+.home{
+    padding: 0%;
+}
+
+#portfolio {
+    padding: 50px 0;
+}
+
+.feature .feature-slider{
+    padding-bottom: 4rem;
+}
+
+.feature .feature-slider .box{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.feature .feature-slider .box .image{
+    height: 21rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.feature .feature-slider .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.feature .feature-slider .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.feature .feature-slider .box .contentt{
+    padding: 1rem 0;
+    position: relative;
+    text-align: center;
+}
+
+.feature .feature-slider .box .contentt h3{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0,.3);
+    padding: .2rem;
+    margin-top: .5rem;
+    border-radius: 10px;
+}
+
+.feature .feature-slider .box .contentt .pricee{
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    background: var(--black);
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.feature .feature-slider .box:hover .contentt .pricee{
+    border: .3rem solid rgba(255,255,255,0.6);
+}
+
+.heading{
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #3b3b3b;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 /* Estilos generales para pantallas menores a 768px */
 @media (max-width: 768px) {
     /* Estilos comunes */
@@ -626,6 +746,14 @@ header {
         width: 100%;
         height: auto;
     }
+
+    .heading{
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
 }
 
 /* Estilos para pantallas menores a 480px */
@@ -708,20 +836,40 @@ header {
         font-size: 12px;
         margin-bottom: 10px;
     }
+
+    .heading {
+        font-size: 24px;
+    }
+
+    p{
+        font-size: 16px;
+    }
+
+    .feature .feature-slider .box .image {
+        height: 18rem;
+    }
+
+    .feature .feature-slider .box .contentt {
+       bottom: 5px;
+    }
+
+    .feature .feature-slider .box .contentt h3 {
+        font-size: 1.4rem;
+    }
+
+    .feature .feature-slider .box .contentt .pricee {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.6rem;
+        margin-top: 10px;
+    }
+
 }
 
 /* Estilos específicos para el nav móvil */
 @media (max-width: 768px) {
     .nav-mobile {
-        background-color: rgba(0, 0, 0, 0.9);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+       top: 0;
+       margin-top: 0;
     }
 
     .nav-mobile.active {
@@ -731,12 +879,41 @@ header {
     }
 
     .nav-mobile li {
-        padding: 20px 0;
+        padding: 0;
         width: 100%;
         text-align: center;
     }
 
     .nav-mobile li a {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .feature .feature-slider .box {
+        width: 100%;
+    }
+
+    .feature .feature-slider .box .image {
+        height: 20rem;
+    }
+
+    .feature .feature-slider .box .contentt h3 {
+        font-size: 1.6rem;
+    } 
+
+    .feature .feature-slider .box .contentt .pricee {
+        font-size: 1.4rem;
+        padding: 0.4rem 0.8rem;
+        margin-top: 15px;
+    }
+
+    .feature .feature-slider .box .contentt {
+        bottom: 10px;      
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
 }
