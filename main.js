@@ -1,10 +1,23 @@
-function toggleMenu() {
+function toggleMenu(forceClose = false) {
     const menu = document.querySelector('.menu');
     const navMobile = document.querySelector('.nav-mobile');
 
+    if(forceClose){
+
+    menu.classList.remove('active');
+    navMobile.classList.remove('active');
+}else{
+
     menu.classList.toggle('active');
     navMobile.classList.toggle('active');
+ }
 }
+
+document.querySelectorAll('.nav-mobile li a').forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMenu(true);
+    });
+})
 
 function changeVideo(name){
     const bgVideoList =document.querySelectorAll('.bg-video')
