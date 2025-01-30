@@ -1,1 +1,0 @@
-# Mica-s-Art
