@@ -3,12 +3,10 @@ function toggleMenu(forceClose = false) {
     const navMobile = document.querySelector('.nav-mobile');
 
     if(forceClose){
-
     menu.classList.remove('active');
     navMobile.classList.remove('active');
 
 }else{
-
     menu.classList.toggle('active');
     navMobile.classList.toggle('active');
  }
@@ -19,6 +17,7 @@ document.querySelectorAll('.nav-mobile li a').forEach(link => {
         toggleMenu(true);
     });
 })
+
 
 function changeVideo(name){
     const bgVideoList =document.querySelectorAll('.bg-video')
